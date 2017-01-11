@@ -13,7 +13,7 @@ function getLiveStreamers() {
 		'Client-ID': clientID
 		},
 		success: function(data) {
-			//console.log(data);
+			console.log(data);
 	   		setList(data);
  		}
 	});
@@ -21,10 +21,15 @@ function getLiveStreamers() {
 
 function setList(data) {
 	var list = '';
-	$.each(data.streams, function(index, stream) {
-		console.log(stream);
-		list += '<li>' + stream.channel.display_name + '</li>';
-	}); 
+	for (var i = 0; i < streamers.length; i++) {
+		var live = '';
+		for (var j = 0; j < data.streams.length; j++) {
+			if (data.streams[j].channel.display_name === streamers[i]) {
+				live = 'LIVE';
+			}
+		}
+		list += '<li>' + streamers[i] + ' ' + live + '</li>';
+	}
 	$('#streamer-list').append(list);
 }
 
