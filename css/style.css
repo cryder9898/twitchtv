@@ -1,4 +1,6 @@
 body {
+	height: 100%
+	width: 100%;
 
 }
 
@@ -9,4 +11,9 @@ li {
 .logo {
 	height: 40px;
 	width: 40px;
+	float: left;
+}
+
+.status {
+	float: right;
 }

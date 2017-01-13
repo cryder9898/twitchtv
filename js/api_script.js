@@ -8,15 +8,19 @@ function getChannelUrl (data) {
 
 function addListItem(isOnline, data) {
 	var li = '';
-	li += '<a href="' + data.url + '" class="list-group-item" target="_blank">';
+	var status = '';
+	if (isOnline) {
+		status = 'ONLINE';
+		colorClass = 'list-group-item-success';
+	} else {
+		status = 'OFFLINE';
+		colorClass = 'list-group-item-danger';
+	}
+	li += '<a href="' + data.url + '" class="list-group-item ' + colorClass + '" target="_blank">';
 	li += '<img class="logo" src="' + data.logo + '"' + 'alt="logo">';
 	li += '<h4 class="list-group-item-heading">' + data.display_name + '</h4>';
-	li += '<p class="list-group-item-text">' + data.status + '</p>';
-	if (isOnline) {
-		li += 'ONLINE';
-	} else {
-		li += 'OFFLINE';
-	}
+	li += '<span class="list-group-item-text">' + data.status + '</span>';
+	li += '<span class="status">' + status + '</span>';
 	li += '</a>'
 	$('#streamer-list').append(li);
 }
