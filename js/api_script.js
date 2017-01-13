@@ -42,7 +42,7 @@ function setChannelInfo(isOnline, channel) {
 			//console.log(jqXHR);
 			var msg = '';
 			if (jqXHR.status === 404) {
-				msg = 'Channel "' + channel + '"" does not exist';
+				msg = 'Channel "' + channel + '" does not exist!!';
 				$('#exist').append('<li>' + msg + '</li>');
 			}
 		}
