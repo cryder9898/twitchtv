@@ -2,11 +2,11 @@ body {
 
 }
 
-.container {
-	width: 450px;
-	margin: auto;
-}
-
 li {
 	list-style: none;
+}
+
+.logo {
+	height: 40px;
+	width: 40px;
 }
