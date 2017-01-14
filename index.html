@@ -15,9 +15,9 @@
 			<h1 class="text-center">TwitchTv JSON API</h1>
 			<ul id="exist"></ul>
 				<ul class="nav nav-tabs">
-				  <li class="active"><a href="#">All</a></li>
-				  <li><a href="#">Online</a></li>
-				  <li><a href="#">Offline</a></li>
+				  <li id="all" class="active"><a href="#" onclick="allClicked()">All</a></li>
+				  <li id="online"><a href="#" onclick="onlineClicked()">Online</a></li>
+				  <li id="offline"><a href="#" onclick="offlineClicked()">Offline</a></li>
 				</ul>
 				<div id="streamer-list" class="list-group"></div> 
 		</div>

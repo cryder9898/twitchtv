@@ -1,6 +1,7 @@
 var channels = ['ESL_SC2','OgamingSC2','cretetion','freecodecamp','storbeck','habathcx','RobotCaleb','noobs2ninjas','brunofin','comster404'];
 var clientID = 'rpkd7d5ra8zsd5jgbupb4nuywh7ivc';
 var baseUrl = 'https://api.twitch.tv/kraken';
+var list = 'all';
 
 function getChannelUrl (data) {
 	return data._links.channel;
@@ -39,7 +40,6 @@ function setChannelInfo(isOnline, channel) {
 
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
-			//console.log(jqXHR);
 			var msg = '';
 			if (jqXHR.status === 404) {
 				msg = 'Channel "' + channel + '" does not exist!!';
@@ -63,15 +63,51 @@ function updateList() {
 				//console.log(data);
 				if (data.stream) {
 					// ONLINE
-		   			setChannelInfo(true, channel);
+					if (list === 'online' || list === 'all') {
+						setChannelInfo(true, channel);
+					}
 				} else {
 					// OFFLINE
-					setChannelInfo(false, channel);
+					if (list === "offline" || list === "all") {
+						setChannelInfo(false, channel); 		
+					}
 				}
- 			},
+ 			}
 		});
 	});
 	
+}
+
+function setActive(id) {
+	// clears lists
+	$('#exist').empty();
+	$("#streamer-list").empty();
+
+	// removes active tab
+	$("#all").removeClass("active");
+	$("#online").removeClass("active");
+	$("#offline").removeClass("active");
+
+	// sets active tab to id 
+	$('#' + id).addClass("active");
+}
+
+function allClicked() {
+	list = 'all';
+	setActive(list);
+	updateList();
+}
+
+function offlineClicked() {
+	list = 'offline';
+	setActive(list);
+	updateList();
+}
+
+function onlineClicked() {
+	list = 'online';
+	setActive(list);
+	updateList();
 }
 
 $(document).ready(function() {
