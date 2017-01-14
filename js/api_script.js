@@ -35,7 +35,6 @@ function setChannelInfo(isOnline, channel) {
 		'Client-ID': clientID
 		},
 		success: function(data) {
-			console.log(data);
 			addListItem(isOnline, data);
 
 		},
