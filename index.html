@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>TwitchTv JSON API</title>
 
@@ -15,18 +15,16 @@
 			<h1 class="text-center">TwitchTv JSON API</h1>
 			<ul id="exist"></ul>
 				<ul class="nav nav-tabs">
-				  <li id="all" class="active"><a href="#" onclick="allClicked()">All</a></li>
-				  <li id="online"><a href="#" onclick="onlineClicked()">Online</a></li>
-				  <li id="offline"><a href="#" onclick="offlineClicked()">Offline</a></li>
+				  <li id="all" class="active"><a href="#" onclick="clicked('all')">All</a></li>
+				  <li id="online"><a href="#" onclick="clicked('online')">Online</a></li>
+				  <li id="offline"><a href="#" onclick="clicked('offline')">Offline</a></li>
 				</ul>
-				<div id="streamer-list" class="list-group"></div> 
+				<div id="streamer-list" class="list-group"></div>
 		</div>
-		<footer class="footer">
-			<div class = "container">
-				<p class="text-muted">Built By Christopher Ryder</p>
-			</div>
-		</footer>			
-		
+		<footer>
+			<p class="footer text-muted">Built By Christopher Ryder</p>
+		</footer>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="js/api_script.js"></script>
