@@ -35,7 +35,7 @@ const setChannelInfo = (isOnline, channel) => {
 		headers: {
 		'Client-ID': clientID
 		},
-		success: function(data) {
+		success: data => {
 			addListItem(isOnline, data);
 
 		},
@@ -72,7 +72,7 @@ const updateList = (list) => {
 			headers: {
 			'Client-ID': clientID
 			},
-			success: function(data) {
+			success: data => {
 				var channelUrl = getChannelUrl(data);
 				console.log(data);
 				if (data.stream) {
