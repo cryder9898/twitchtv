@@ -23,6 +23,8 @@ const addListItem = (isOnline, data) => {
 	li += '<span class="list-group-item-text">' + data.status + '</span>';
 	li += '<span class="status">' + status + '</span>';
 	li += '</a>';
+
+	$('#streamer-list').append(li);
 }
 
 const setChannelInfo = (isOnline, channel) => {
@@ -72,7 +74,7 @@ const updateList = (list) => {
 			},
 			success: function(data) {
 				var channelUrl = getChannelUrl(data);
-				//console.log(data);
+				console.log(data);
 				if (data.stream) {
 					// ONLINE
 					if (list === 'online' || list === 'all') {
